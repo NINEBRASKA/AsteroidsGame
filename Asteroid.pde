@@ -1,5 +1,6 @@
-class Spaceship extends Floater  
+class Asteroid extends Floater
 {
+  private int aSpeed;
   public void setX(int x){myCenterX = x;}
   public int getX(){return (int)myCenterX;}
   public void setY(int y){myCenterY = y;}
@@ -10,18 +11,18 @@ class Spaceship extends Floater
   public double getDirectionY(){return myDirectionY;}
   public void setPointDirection(int degrees){myPointDirection = degrees;}
   public double getPointDirection(){return myPointDirection;}
-  public Spaceship()
+  public Asteroid()
   {
-    corners = 4;  
-    int[] xS = {-8,16,-8,-2};
-    int[] yS = {-8,0,8,0};
-    xCorners = xS;   
-    yCorners = yS;   
-    myColor = 255;   
-    myCenterX = 250; 
-    myCenterY = 250; 
-    myDirectionX = 0; 
-    myDirectionY = 0; 
-    myPointDirection = 270;    
+    aSpeed = (int)(Math.random() * 2 ) - 1;
   }
+  public void move()
+  {
+    turn(aSpeed);
+    super.move();
+  }
+  public void show()
+  {
+    fill(20,20,20);
+    ellipse(250,250,10,10); 
+  }  
 }

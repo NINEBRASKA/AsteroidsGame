@@ -39,23 +39,10 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     myCenterY += myDirectionY;     
 
     //wrap around screen    
-    if(myCenterX >width)
-    {     
-      myCenterX = 0;    
-    }    
-    else if (myCenterX<0)
-    {     
-      myCenterX = width;    
-    }    
-    if(myCenterY >height)
-    {    
-      myCenterY = 0;    
-    } 
-    
-    else if (myCenterY < 0)
-    {     
-      myCenterY = height;    
-    }   
+    if(myCenterX >width) { myCenterX = 0; }    
+    else if (myCenterX<0) { myCenterX = width; }    
+    if(myCenterY >height) { myCenterY = 0; } 
+    else if (myCenterY < 0) { myCenterY = height; }   
   }   
   public void show ()  //Draws the floater at the current position  
   {             
@@ -73,10 +60,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     
     //draw the polygon
     beginShape();
-    for (int nI = 0; nI < corners; nI++)
-    {
-      vertex(xCorners[nI], yCorners[nI]);
-    }
+    for (int nI = 0; nI < corners; nI++) { vertex(xCorners[nI], yCorners[nI]); }
     endShape(CLOSE);
 
     //"unrotate" and "untranslate" in reverse order
