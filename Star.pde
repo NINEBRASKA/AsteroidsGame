@@ -9,6 +9,6 @@ class Star
   public void show()
   {
     fill(255);
-    ellipse(myX, myY, 2, 2);
+    ellipse(myX, myY, 4, 4);
   }
 }
