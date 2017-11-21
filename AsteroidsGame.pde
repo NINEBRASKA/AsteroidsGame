@@ -1,11 +1,12 @@
 Spaceship Destroyer;
-Asteroid Banger;
+Asteroid[] Bangers = new Asteroid[5];
 Star[] Galaxy = new Star[800];
 public void setup() 
 {
   size(500, 500);
   Destroyer = new Spaceship();
   for ( int i = 0; i < Galaxy.length; i++ ) { Galaxy[i] = new Star(); }
+  for( int l = 0; l < Bangers.length; l++) {Bangers[l] = new Asteroid();}
 }
 public void draw() 
 {
@@ -13,7 +14,7 @@ public void draw()
   Destroyer.show();
   Destroyer.move();
   for ( int j = 0; j < Galaxy.length; j++ ) { Galaxy[j].show(); }
-  Banger.show();
+  for (int l = 0; l < Bangers.length; l++) { Bangers[l].show(); Bangers[l].move(); }
 }
 public void keyPressed()
 {
