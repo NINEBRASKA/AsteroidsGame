@@ -17,7 +17,9 @@ class Spaceship extends Floater
     int[] yS = {-8,0,8,0};
     xCorners = xS;   
     yCorners = yS;   
-    myColor = 255;   
+    myColor1 = 255; 
+    myColor2 = 255;
+    myColor3 = 255;
     myCenterX = 250; 
     myCenterY = 250; 
     myDirectionX = 0; 
