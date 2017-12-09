@@ -21,7 +21,7 @@ public void draw()
     Bangers.get(l).setDirectionX( (int) (Math.random() * 2) - 1 );
     Bangers.get(l).setDirectionY( (int) (Math.random() * 2) - 1 );
     float d = dist( Destroyer.getX(), Destroyer.getY(), Bangers.get(l).getX(), Bangers.get(l).getY() );
-    if ( d < 60 ) { Bangers.remove(l); }
+    if ( d < 30 ) { Bangers.remove(l); }
   }
 }
 public void keyPressed()
