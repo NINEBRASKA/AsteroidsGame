@@ -1,12 +1,12 @@
 Spaceship Destroyer;
-Asteroid[] Bangers = new Asteroid[5];
+ArrayList <Asteroid> Bangers = new ArrayList <Asteroid>();
 Star[] Galaxy = new Star[800];
 public void setup() 
 {
   size(500, 500);
   Destroyer = new Spaceship();
   for ( int i = 0; i < Galaxy.length; i++ ) { Galaxy[i] = new Star(); }
-  for( int l = 0; l < Bangers.length; l++) {Bangers[l] = new Asteroid();}
+  for( int l = 0; l < 5; l++) { Bangers.add(new Asteroid()); }
 }
 public void draw() 
 {
@@ -14,7 +14,15 @@ public void draw()
   Destroyer.show();
   Destroyer.move();
   for ( int j = 0; j < Galaxy.length; j++ ) { Galaxy[j].show(); }
-  for (int l = 0; l < Bangers.length; l++) { Bangers[l].show(); Bangers[l].move(); }
+  for ( int l = 0; l < Bangers.size(); l++ ) 
+  { 
+    Bangers.get(l).show();
+    Bangers.get(l).move();
+    Bangers.get(l).setDirectionX( (int) (Math.random() * 2) - 1 );
+    Bangers.get(l).setDirectionY( (int) (Math.random() * 2) - 1 );
+    float d = dist( Destroyer.getX(), Destroyer.getY(), Bangers.get(l).getX(), Bangers.get(l).getY() );
+    if ( d < 60 ) { Bangers.remove(l); }
+  }
 }
 public void keyPressed()
 {
